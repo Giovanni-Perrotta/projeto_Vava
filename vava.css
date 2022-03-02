@@ -4,19 +4,52 @@ body{
 header{
     display: flex;
     justify-content: space-between;
-    background-color: #002;
+    background-color: #101823;
     margin: 0 auto;
     height: 65px;
     width: 100%;
 }
 header img{
     height: 100%;
-    width: 32px;
+    width: 60px;
 }
-button{
+header div{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+input{
+    height: 20px;
+    width: 50px;
+    margin-right: 5px;
+}
+#input1{
+    width: 100px;
+}
+main{
+    display: flex;
+    align-items: center;
+
+}
+main div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+main button{
     background-color: #e50914;
     color: #FFF;
     border: 0;
-    width: 100px;
-    height: 32px;
+    width: 300px;
+    height: 150px;
+    /* margin-top: 10px; */
+}
+#botao_meio{
+    margin-top: 150px;
+}
+footer{
+    height: 120px;
+    background-color: #000;
+    color: #FFF;
 }

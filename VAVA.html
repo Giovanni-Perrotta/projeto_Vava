@@ -7,19 +7,19 @@
 </head>
 <body>
     <header>
-        <img src="https://images.cults3d.com/4QqRV9kLYYEuw9ur_X3yjQl1sjk=/516x516/https://files.cults3d.com/uploaders/15024335/illustration-file/a86d53e4-2bd9-4a8f-9550-986686c3131a/gi0mAjIh_400x400.png" alt="Logo">
-        <input type="search">
-        <input type="submit">
-        
-        
+        <a href="VAVA.html"><img src="https://images.cults3d.com/4QqRV9kLYYEuw9ur_X3yjQl1sjk=/516x516/https://files.cults3d.com/uploaders/15024335/illustration-file/a86d53e4-2bd9-4a8f-9550-986686c3131a/gi0mAjIh_400x400.png" alt="Logo"></a>
+        <div>
+            <input id="input1" type="search">
+            <input type="submit" onclick="exibeProdutosDaBusca()">
+        </div>
     </header>
 
     <main>
-
-        <button type="button">Agentes</button>
-        <button type="button">Armas</button>
-        <button type="button">Mapa</button>
-
+        <div>
+            <button type="button">Agentes</button>
+            <button id="botao_meio" type="button">Mapas</button>
+            <button type="button">Armas</button>
+        </div>
     </main>
 
     <footer>
@@ -31,5 +31,74 @@
             </ul>
         </nav>
     </footer>
+
+<script>
+
+    var agentes = [
+        
+            {"Nome": "Brimstone", "Img": "https://theclutch.com.br/wp-content/uploads/2021/01/7061eb02-thumb-1920-1080942.jpg"},
+            {"Nome": "Phoenix"},
+            {"Nome": "Sage"},
+            {"Nome": "Sova"},
+            {"Nome": "Viper"},
+            {"Nome": "Cypher"},
+            {"Nome": "Reyna"},
+            {"Nome": "Killjoy"},
+            {"Nome": "Breach"},
+            {"Nome": "Omen"},
+            {"Nome": "Jett"},
+            {"Nome": "Raze"},
+            {"Nome": "Skye"},
+            {"Nome": "Yoru"},
+            {"Nome": "Astra"},
+            {"Nome": "Kay/o"},
+            {"Nome": "Chamber"},
+            {"Nome": "Neon"}
+    ]
+
+    function productToCard(agentesHTML){
+                var retorno = agentesHTML.map((dictItem) => {
+                var title = dictItem.Nome
+                var image = dictItem.Img
+                return "<div> <p> "+ title + " </p> <img src="+image+"> </div>"
+                })
+                console.log(retorno)
+                return retorno
+            }
+
+    function exibeProduto(cardComoHtml) {     
+                var corpo = document.getElementsByTagName("main")
+                corpo.innerHTML += cardComoHtml;
+            }
+
+    function apagaConteudo () {
+                var corpo = document.getElementsByTagName("main")
+                corpo.innerHTML = "";
+            }
+
+    function exibeProdutosDaBusca(){
+
+    var busca = document.getElementById("input1").value
+
+    console.log("A busca foi: "+ busca)
+    
+    agentesNomes(busca)
+    
+    }
+    function agentesNomes (busca){
+        apagaConteudo()
+
+        var filtro = agentes.filter((dictAgentes) => {
+            return dictAgentes.Nome == busca
+        })
+        console.log(filtro)
+
+        var cards = productToCard(filtro)
+                cards.forEach(card => {
+                    exibeProduto(card)
+                })
+    }
+</script>
+
 </body>
 </html>
