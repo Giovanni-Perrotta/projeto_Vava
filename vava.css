@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #002;
+    margin: 0 auto;
+    height: 65px;
+    width: 100%;
+}
+header img{
+    height: 100%;
+    width: 32px;
+}
+button{
+    background-color: #e50914;
+    color: #FFF;
+    border: 0;
+    width: 100px;
+    height: 32px;
+}
